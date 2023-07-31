@@ -1,28 +1,25 @@
-#!/usr/bin/env python3
-from typing import List
+#!/usr/bin/python3
+"""
+    0-pascal_triangle.py: pascal_triangle()
+"""
 
 
-def pascal_triangle(n: int) -> List[list]:
-    '''
-    Pascal triangle
-    '''
+def pascal_triangle(n):
+    """
+        returns a lis of lists of integers
+        Args:
+            n (int): number of lists and digits
+        Returns: list of lists
+    """
+    temp_row = [1]
+    temp_l = [0]
+    pTri = []
+
     if n <= 0:
-        return []
+        return pTri
 
-    if n == 1:
-        return [[1]]
-
-    if n == 2:
-        return [[1], [1, 1]]
-
-    triangle = [[1], [1, 1]]
-
-    for i in range(2, n):
-        temp = [1, 1]
-        for j in range(0, len(triangle[-1])-1):
-            a = triangle[-1][j]
-            b = triangle[-1][j+1]
-            temp.insert(-1, a + b)
-        triangle.append(temp)
-
-    return triangle
+    for i in range(n):
+        pTri.append(temp_row)
+        temp_row = \
+            [le+r for le, r in zip(temp_row + temp_l, temp_l + temp_row)]
+    return pTri
