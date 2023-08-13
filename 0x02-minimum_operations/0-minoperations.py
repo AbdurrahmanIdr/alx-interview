@@ -1,28 +1,25 @@
+#!/usr/bin/python3
+"""Module for 0-minoperations"""
+
+
 def minOperations(n):
     """
-    Calculates the fewest number of operations needed to obtain
-    exactly n characters 'H' in the text file.
-    
-    Args:
-        n (int): The target number of characters 'H'.
-    
-    Returns:
-        int: Minimum number of operations, or 0 if impossible.
+    minOperations
+    Gets fewest # of operations needed to result in exactly n H characters
     """
-    if n <= 1:
+    # all outputs should be at least 2 char: (min, Copy All => Paste)
+    if (n < 2):
         return 0
-    
-    # Initialize a dynamic programming array to store the minimum operations
-    dp = [0] * (n + 1)
-    
-    # Populate the dynamic programming array using bottom-up approach
-    for i in range(2, n + 1):
-        dp[i] = float('inf')
-        for j in range(1, i):
-            if i % j == 0:
-                # Update dp[i] with the minimum operations
-                dp[i] = min(dp[i], dp[j] + i // j)
-    
-    # If it's impossible to achieve n, return 0
-    return dp[n] if dp[n] != float('inf') else 0
-
+    ops, root = 0, 2
+    while root <= n:
+        # if n evenly divides by root
+        if n % root == 0:
+            # total even-divisions by root = total operations
+            ops += root
+            # set n to the remainder
+            n = n / root
+            # reduce root to find remaining smaller vals that evenly-divide n
+            root -= 1
+        # increment root until it evenly-divides n
+        root += 1
+    return ops
