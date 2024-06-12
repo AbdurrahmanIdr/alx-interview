@@ -50,7 +50,7 @@ Contributions are welcome! If you have a solution to a problem or a new problem 
 
 ## License
 
-This repository is licensed under the MIT License. See the [LICENSE](./LICENCE) file for more information.
+This repository is licensed under the MIT License. See the [ALX LICENSE](./LICENCE) file for more information.
 
 ## Contact
 
