@@ -15,5 +15,11 @@ def pascal_triangle(n):
     temp_l = [0]
     pTri = []
 
-    
+    if n <= 0:
+        return pTri
+
+    for i in range(n):
+        pTri.append(temp_row)
+        temp_row = \
+            [le+r for le, r in zip(temp_row + temp_l, temp_l + temp_row)]
     return pTri
