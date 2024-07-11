@@ -34,6 +34,6 @@ def solve(n):
         for i in range(n):
             k.append([i, solution[i]])
         print(k)
-
+        
 
 solve(n)
