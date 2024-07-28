@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Making Change Module."""
+"""Making Change Module.
+
+This module contains the make_change function to determine the minimum 
+number of coins needed to make a given total.
+"""
 
 
 def make_change(coins, total):
@@ -11,8 +15,8 @@ def make_change(coins, total):
         total (int): The amount to be made with the given coins.
     
     Returns:
-        int: The minimum number of coins needed to make the total, or -1 
-        if it is not possible.
+        int: The minimum number of coins needed to make the total, 
+        or -1 if it is not possible.
     """
     if total <= 0:
         return 0
